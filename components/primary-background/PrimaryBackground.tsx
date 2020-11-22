@@ -1,6 +1,6 @@
 import React from 'react';
 import {StatusBar, StyleSheet, View} from 'react-native';
-import {GLOBAL_STYLE_VARIABLES} from '../constants';
+import {GLOBAL_STYLE_VARIABLES} from '../../constants';
 
 interface PrimaryBackgroundProps {
   hideStatusBar?: boolean;

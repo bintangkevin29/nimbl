@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, Text, Image} from 'react-native';
-import PrimaryBackground from '../../components/PrimaryBackground';
+import PrimaryBackground from '../../components/primary-background/PrimaryBackground';
 
 import Logo from '../../assets/images/logo.svg';
 import {TouchableOpacity} from 'react-native-gesture-handler';
