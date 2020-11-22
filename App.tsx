@@ -17,12 +17,8 @@ const MyTheme = {
 const App: React.FC = () => {
   return (
     <NavigationContainer theme={MyTheme}>
-      <Stack.Navigator>
-        <Stack.Screen
-          options={{headerShown: false}}
-          name="Landing"
-          component={LandingScreen}
-        />
+      <Stack.Navigator screenOptions={{headerShown: false}}>
+        <Stack.Screen name="Landing" component={LandingScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
