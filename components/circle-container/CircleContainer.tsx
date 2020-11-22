@@ -1,20 +1,26 @@
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
+import {StyleProp, StyleSheet, View, ViewProps} from 'react-native';
 import {GLOBAL_STYLE_VARIABLES} from '../../constants';
 
-interface CircleContainerProps {
+interface CircleContainerProps extends ViewProps {
   disabled?: boolean;
+  larger?: boolean;
+  style?: StyleProp<any>;
 }
 
 const CircleContainer: React.FC<CircleContainerProps> = ({
   disabled,
   children,
+  larger = false,
+  style,
 }) => {
   return (
     <View
       style={[
         circleContainerStyle.container,
         disabled && circleContainerStyle.containerDisabled,
+        larger && circleContainerStyle.containerLarger,
+        style,
       ]}>
       {children}
     </View>
@@ -34,6 +40,10 @@ const circleContainerStyle = StyleSheet.create({
     backgroundColor: GLOBAL_STYLE_VARIABLES.greyColor,
     borderWidth: 1,
     borderColor: GLOBAL_STYLE_VARIABLES.darkerGreyColor,
+  },
+  containerLarger: {
+    width: 26,
+    height: 26,
   },
 });
 
