@@ -1,13 +1,17 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, View, ViewProps} from 'react-native';
 
-interface ContentStackProps {
+interface ContentStackProps extends ViewProps {
   title: string;
 }
 
-const ContentStack: React.FC<ContentStackProps> = ({title, children}) => {
+const ContentStack: React.FC<ContentStackProps> = ({
+  title,
+  children,
+  ...props
+}) => {
   return (
-    <View style={style.container}>
+    <View style={[style.container, props?.style]} {...props}>
       <Text style={style.title}>{title}</Text>
       {children}
     </View>
