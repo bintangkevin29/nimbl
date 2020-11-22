@@ -40,7 +40,7 @@ const LandingScreen: React.FC<LandingScreenProps> = ({navigation}) => {
         </View>
         <View style={style.getStartedButtonContainer}>
           <TouchableOpacity
-            onPress={() => navigation?.navigate('Dead')}
+            onPress={() => navigation?.navigate('Home')}
             activeOpacity={0.9}>
             <Text style={style.getStartedButton}>Get Started</Text>
           </TouchableOpacity>
