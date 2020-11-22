@@ -1,13 +1,19 @@
 import React from 'react';
-import {Text, View} from 'react-native';
+import {ScrollView} from 'react-native-gesture-handler';
+import CleaningType from '../../components/cleaning-type/CleaningType';
+import CustomHeader from '../../components/custom-header/CustomHeader';
+import MainBody from '../../components/main-body/MainBody';
 import PrimaryBackground from '../../components/primary-background/PrimaryBackground';
 
 const HomeScreen: React.FC = () => {
   return (
     <PrimaryBackground>
-      <View>
-        <Text>Cok</Text>
-      </View>
+      <ScrollView contentContainerStyle={{flexGrow: 1}}>
+        <CustomHeader>Your Plan</CustomHeader>
+        <MainBody>
+          <CleaningType />
+        </MainBody>
+      </ScrollView>
     </PrimaryBackground>
   );
 };

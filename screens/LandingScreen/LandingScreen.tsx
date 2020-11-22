@@ -1,11 +1,11 @@
 import React from 'react';
-import {View, Text, Image} from 'react-native';
+import {View, Text, Image, TouchableOpacity} from 'react-native';
 import PrimaryBackground from '../../components/primary-background/PrimaryBackground';
 
 import Logo from '../../assets/images/logo.svg';
-import {TouchableOpacity} from 'react-native-gesture-handler';
 import {NavigationScreenProp} from 'react-navigation';
 import {style} from './landingScreenStyle';
+import CustomTouchable from '../../components/custom-touchable/CustomTouchable';
 
 interface LandingScreenProps {
   navigation?: NavigationScreenProp<any, any>;
@@ -39,11 +39,9 @@ const LandingScreen: React.FC<LandingScreenProps> = ({navigation}) => {
           </View>
         </View>
         <View style={style.getStartedButtonContainer}>
-          <TouchableOpacity
-            onPress={() => navigation?.navigate('Home')}
-            activeOpacity={0.9}>
+          <CustomTouchable onPress={() => navigation?.navigate('Home')}>
             <Text style={style.getStartedButton}>Get Started</Text>
-          </TouchableOpacity>
+          </CustomTouchable>
         </View>
       </View>
     </PrimaryBackground>

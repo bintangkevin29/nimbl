@@ -12,7 +12,6 @@ const CustomHeader: React.FC = ({children}) => {
 
 const style = StyleSheet.create({
   container: {
-    flex: 1,
     alignItems: 'center',
     paddingVertical: 27,
   },
