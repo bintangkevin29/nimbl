@@ -7,7 +7,7 @@ interface ContentStackProps {
 
 const ContentStack: React.FC<ContentStackProps> = ({title, children}) => {
   return (
-    <View>
+    <View style={style.container}>
       <Text style={style.title}>{title}</Text>
       {children}
     </View>
@@ -15,6 +15,9 @@ const ContentStack: React.FC<ContentStackProps> = ({title, children}) => {
 };
 
 const style = StyleSheet.create({
+  container: {
+    marginBottom: 33,
+  },
   title: {
     fontSize: 15,
     fontFamily: 'ProductSans-Bold',
