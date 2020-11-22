@@ -8,7 +8,7 @@ export const cleaningTypeStyle = StyleSheet.create({
   cleaningType: {
     flex: 1,
     paddingHorizontal: 7,
-    marginTop: -20,
+    marginTop: -10,
     alignItems: 'center',
   },
   cleaningTypeImage: {
