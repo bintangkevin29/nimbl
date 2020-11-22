@@ -7,7 +7,7 @@ const CustomTouchable: React.FC<TouchableOpacityProps> = ({
   ...props
 }) => {
   return (
-    <TouchableOpacity activeOpacity={0.7} {...props}>
+    <TouchableOpacity activeOpacity={0.9} {...props}>
       {children}
     </TouchableOpacity>
   );
