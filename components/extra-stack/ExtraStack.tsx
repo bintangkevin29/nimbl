@@ -1,14 +1,12 @@
-import {NavigationProp, useNavigation} from '@react-navigation/native';
 import React from 'react';
-import {Button, Text, View} from 'react-native';
+import {View} from 'react-native';
+
 import ContentStack from '../content-stack/ContentStack';
 import ExtraIcon from '../extra-icon/ExtraIcon';
 
 import {extraStackStyle} from './extraStackStyle';
 
 const ExtraStack: React.FC = () => {
-  const navigation = useNavigation();
-
   return (
     <ContentStack title="Selected Extras">
       <View style={extraStackStyle.container}>

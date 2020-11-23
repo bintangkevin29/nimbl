@@ -5,14 +5,17 @@ import {
   StyleProp,
   StyleSheet,
   Text,
+  TouchableOpacityProps,
   View,
   ViewStyle,
 } from 'react-native';
-import {GLOBAL_STYLE_VARIABLES} from '../../constants';
+
 import Counter from '../counter/Counter';
 import CustomTouchable from '../custom-touchable/CustomTouchable';
 
-interface ExtraIconProps {
+import {GLOBAL_STYLE_VARIABLES} from '../../constants';
+
+interface ExtraIconProps extends TouchableOpacityProps {
   count?: Number;
   imageSource: ImageSourcePropType;
   title: String;
@@ -24,9 +27,10 @@ const ExtraIcon: React.FC<ExtraIconProps> = ({
   imageSource,
   title,
   style,
+  ...props
 }) => {
   return (
-    <CustomTouchable style={[extraIconStyle.container, style]}>
+    <CustomTouchable style={[extraIconStyle.container, style]} {...props}>
       <View style={extraIconStyle.iconContainer}>
         <Image
           style={extraIconStyle.image}
