@@ -5,7 +5,8 @@ import LandingScreen from './screens/LandingScreen/LandingScreen';
 import {GLOBAL_STYLE_VARIABLES} from './constants';
 import HomeScreen from './screens/HomeScreen/HomeScreen';
 
-const Stack = createStackNavigator();
+const RootStack = createStackNavigator();
+const MainStack = createStackNavigator();
 
 const MyTheme = {
   ...DefaultTheme,
@@ -16,17 +17,30 @@ const MyTheme = {
   },
 };
 
+const MainScreens: React.FC = () => (
+  <MainStack.Navigator screenOptions={{headerShown: false}}>
+    <MainStack.Screen name="Home" component={HomeScreen} />
+  </MainStack.Navigator>
+);
+
 const App: React.FC = () => {
   return (
     <NavigationContainer theme={MyTheme}>
-      <Stack.Navigator
+      <RootStack.Navigator
+        mode="modal"
+        initialRouteName="MainScreen"
         screenOptions={{
+          animationEnabled: false,
           headerShown: false,
           headerStyle: {backgroundColor: GLOBAL_STYLE_VARIABLES.primaryColor},
         }}>
-        <Stack.Screen name="Landing" component={LandingScreen} />
-        <Stack.Screen name="Home" component={HomeScreen} />
-      </Stack.Navigator>
+        <RootStack.Screen name="MainScreen" component={MainScreens} />
+        <RootStack.Screen
+          name="Landing"
+          component={LandingScreen}
+          options={{animationEnabled: true}}
+        />
+      </RootStack.Navigator>
     </NavigationContainer>
   );
 };

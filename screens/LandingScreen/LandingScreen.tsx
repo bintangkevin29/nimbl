@@ -1,17 +1,15 @@
 import React from 'react';
-import {View, Text, Image, TouchableOpacity} from 'react-native';
+import {View, Text, Image} from 'react-native';
 import PrimaryBackground from '../../components/primary-background/PrimaryBackground';
 
 import Logo from '../../assets/images/logo.svg';
-import {NavigationScreenProp} from 'react-navigation';
 import {style} from './landingScreenStyle';
 import CustomTouchable from '../../components/custom-touchable/CustomTouchable';
+import {useNavigation} from '@react-navigation/native';
 
-interface LandingScreenProps {
-  navigation?: NavigationScreenProp<any, any>;
-}
+const LandingScreen: React.FC = () => {
+  const navigation = useNavigation();
 
-const LandingScreen: React.FC<LandingScreenProps> = ({navigation}) => {
   return (
     <PrimaryBackground hideStatusBar>
       <View style={style.container}>
@@ -39,7 +37,7 @@ const LandingScreen: React.FC<LandingScreenProps> = ({navigation}) => {
           </View>
         </View>
         <View style={style.getStartedButtonContainer}>
-          <CustomTouchable onPress={() => navigation?.navigate('Home')}>
+          <CustomTouchable onPress={() => navigation?.pop()}>
             <Text style={style.getStartedButton}>Get Started</Text>
           </CustomTouchable>
         </View>
